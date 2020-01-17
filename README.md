@@ -1,9 +1,9 @@
-# Animal Shelter : The C# Web App
+# HairSalon : The C# Web App
 ### By Adilet Momunaliev
 -----
 
 ## Description
-* Animal Shelter C# Web App
+* HairSalon C# Web App
 
 ## Technologies Used
 * C#
