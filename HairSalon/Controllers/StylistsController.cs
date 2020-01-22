@@ -65,6 +65,21 @@ namespace HairSalon
             _dataBase.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult SearchStylistByName()
+        {
+            return View();
+        }
+        [HttpPost("/stylists/SearchStylistByName")]
+        public ActionResult SearchStylistByName(string givenName)
+        {
+            List<Stylist> fondStylist = _dataBase.Stylists.Where(iterateRowsOfStylistTable => iterateRowsOfStylistTable.StylistName==givenName).ToList();//FirstOrDefault<Stylist>();
+            if(fondStylist==null)
+            {
+                return RedirectToAction("SearchStylistByName");
+            }
+            return View("ShowSearchResults",fondStylist);
+        }
       
     }
 }
