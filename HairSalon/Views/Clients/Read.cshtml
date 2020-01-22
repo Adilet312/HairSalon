@@ -4,11 +4,11 @@
 
 @model HairSalon.Models.Client
 
-<h2>Client Details</h2>
+<h2>Welcome Client's Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.ClientName): @Html.DisplayFor(model => model.ClientName)</h3>
-@* <h3>@Html.LabelFor(model => model.Stylist)</h3>
-<h3>@Html.DropDownList("StylistId")</h3> *@
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Update client", "Update", new { updateID = Model.ClientId })</p>
-<p>@Html.ActionLink("Delete client", "Delete", new { deleteID = Model.ClientId })</p>
+<hr />
+<h3>@Html.ActionLink("Update client", "Update", new { updateID = Model.ClientId })</h3>
+<h3>@Html.ActionLink("Delete client", "Delete", new { deleteID = Model.ClientId })</h3>
+<h3>@Html.ActionLink("Back To Clients's List", "Index", "Clients")</h3>
+<h3>@Html.ActionLink("Back to list", "Index")</h3>

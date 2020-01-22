@@ -3,7 +3,7 @@
 }
 @using HairSalon.Models;
 @model List<HairSalon.Models.Stylist>;
-<h1>Welcome Eau Claire's Salon.</h1>
+<h1>Welcome list of stylists's page.</h1>
 @if(@Model.Count==0)
 {
     <h4>There is no stylists in our list.</h4>
@@ -11,10 +11,11 @@
 <ul> 
   @foreach(Stylist stylist in Model)
   {
-      <li>@Html.ActionLink($"{stylist.StylistName}",  "Read", new { readID = stylist.StylistId })</li>
+      <h3><li>@Html.ActionLink($"{stylist.StylistName}",  "Read", new { readID = stylist.StylistId })</li></h3>
   }
 </ul>
 <hr/>
-<p>@Html.ActionLink("Add new stylist", "Create")</p>
-<p>@Html.ActionLink("Return Home Page","Index","Home")</p>
+<h3>@Html.ActionLink("Add new stylist", "Create")</h3>
+<h3>@Html.ActionLink("See all Clients", "Index", "Clients")</h3>
+<h3>@Html.ActionLink("Return Home Page","Index","Home")</h3>
 

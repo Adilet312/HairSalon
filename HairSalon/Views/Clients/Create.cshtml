@@ -6,10 +6,10 @@
 <h4>Add a new client</h4>
 @using (Html.BeginForm())
 {
-    <h3>@Html.LabelFor(model => model.ClientName)</h3>
-    <h3>@Html.TextBoxFor(model => model.ClientName)</h3>
+    <h3>Please enter @Html.LabelFor(model => model.ClientName): @Html.TextBoxFor(model => model.ClientName)</h3>
     <h3>Select @Html.LabelFor(model => model.Stylist) to add clients: @Html.DropDownList("StylistId")</h3>
-    <input type="submit" value="Add new client" />
+    <h3><input type="submit" value="Submit in order to add a new client" /></h3>
 }
-<p>@Html.ActionLink("Show all stylists", "Index","Stylists")</p>
-<p>@Html.ActionLink("Return Home Page", "Index","Home")</p>
+<hr/>
+<h3>@Html.ActionLink("Show all stylists", "Index","Stylists")</h3>
+<h3>@Html.ActionLink("Return Home Page", "Index","Home")</h3>

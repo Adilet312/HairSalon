@@ -8,10 +8,9 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model=>model.ClientId)
-    @Html.LabelFor(model=>model.ClientName)
-    @Html.TextBoxFor(model=> model.ClientName)
-
-    @Html.LabelFor(model=>model.Stylist)
-    @Html.DropDownList("StylistId")
-    <input type ="submit" value="Update" />
+    <h3>Please enter client to update:</h3>
+   <h3> @Html.TextBoxFor(model=> model.ClientName)</h3><br>
+   <h3> Select Stylist:  @Html.DropDownList("StylistId") </h3>
+   <hr/>
+    <h2><input type ="submit" value="Submit to update the client" /></h2>
 }

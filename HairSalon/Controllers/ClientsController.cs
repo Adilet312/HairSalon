@@ -52,5 +52,21 @@ namespace HairSalon
             _dataBase.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Delete(int deleteID)
+        {
+            Client client_for_deleting = _dataBase.Clients.FirstOrDefault(rowOfClients => rowOfClients.ClientId==deleteID);
+            return View(client_for_deleting);
+        }
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeleteClient(int deleteID)
+        {
+            Client deletingClient = _dataBase.Clients.FirstOrDefault(rowOfClients => rowOfClients.ClientId==deleteID);
+            _dataBase.Remove(deletingClient);
+            _dataBase.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        
     }
 }

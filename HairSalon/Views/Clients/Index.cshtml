@@ -14,9 +14,10 @@
 
 @foreach (Client client in Model)
 {
-  <li>@Html.ActionLink($"{client.ClientName}", "Read", new { readID = client.ClientId }) | @client.Stylist.StylistName | Stylist's specialty: @client.Stylist.StylistSpecialty </li>
+  <h3><li>@Html.ActionLink($"{client.ClientName}", "Read", new { readID = client.ClientId }) | Stylist's name: @client.Stylist.StylistName | Stylist's specialty: @client.Stylist.StylistSpecialty </li></h3>
 }
-
-<p>@Html.ActionLink("Add new item", "Create")</p>
-<p>@Html.ActionLink("Back to List of Stylists", "Index","Stylists")</p>
-<p>@Html.ActionLink("Back to Home Page", "Index","Home")</p>
+<hr />
+<h3>@Html.ActionLink("Add new Stylist", "Create")</h3>
+<h3>@Html.ActionLink("Back to List of Stylists", "Index","Stylists")</h3>
+<h3>@Html.ActionLink("Back to List of Clients", "Index", "Clients")</h3>
+<h3>@Html.ActionLink("Back to Home Page", "Index","Home")</h3>

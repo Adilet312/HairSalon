@@ -35,6 +35,7 @@ namespace HairSalon
         public ActionResult Read(int readID)
         {
             Stylist stylist_for_displaying = _dataBase.Stylists.FirstOrDefault(iterateRowsOfStylistTable => iterateRowsOfStylistTable.StylistId==readID);
+            stylist_for_displaying.Clients = _dataBase.Clients.Where(iterateRowsOfStylistTable => iterateRowsOfStylistTable.StylistId==readID).ToList();
             return View(stylist_for_displaying);
         }
         [HttpGet]
