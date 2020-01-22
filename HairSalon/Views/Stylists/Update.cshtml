@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models;
+@model HairSalon.Models.Stylist;
+<h4>Update this Stylist: </h4><br>
+<h3>@Html.DisplayNameFor(model => model.StylistName): @Html.DisplayFor(model => model.StylistName)</h3>
+<h3>@Html.DisplayNameFor(model => model.StylistSpecialty): @Html.DisplayFor(model => model.StylistSpecialty)</h3>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.StylistId)
+    @Html.LabelFor(model=>model.StylistName)
+    @Html.TextBoxFor(model=> model.StylistName)
+    @Html.LabelFor(model=>model.StylistSpecialty)
+    @Html.TextBoxFor(model=> model.StylistSpecialty)
+    <input type ="submit" value="Update" />
+}
+<p>@Html.ActionLink("Back to list of  stylists", "Index")</p>
+<p>@Html.ActionLink("Return Home Page", "Index","Home")</p>

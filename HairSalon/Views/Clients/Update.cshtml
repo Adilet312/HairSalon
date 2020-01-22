@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client;
+<h4>Update this Client: </h4><br>
+<h3>@Html.DisplayNameFor(model => model.ClientName): @Html.DisplayFor(model => model.ClientName)</h3>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.ClientId)
+    @Html.LabelFor(model=>model.ClientName)
+    @Html.TextBoxFor(model=> model.ClientName)
+
+    @Html.LabelFor(model=>model.Stylist)
+    @Html.DropDownList("StylistId")
+    <input type ="submit" value="Update" />
+}
