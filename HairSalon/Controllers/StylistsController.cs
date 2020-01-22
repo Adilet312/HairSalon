@@ -73,13 +73,28 @@ namespace HairSalon
         [HttpPost("/stylists/SearchStylistByName")]
         public ActionResult SearchStylistByName(string givenName)
         {
-            List<Stylist> fondStylist = _dataBase.Stylists.Where(iterateRowsOfStylistTable => iterateRowsOfStylistTable.StylistName==givenName).ToList();//FirstOrDefault<Stylist>();
+            List<Stylist> fondStylist = _dataBase.Stylists.Where(iterateRowsOfStylistTable => iterateRowsOfStylistTable.StylistName==givenName).ToList();
             if(fondStylist==null)
             {
                 return RedirectToAction("SearchStylistByName");
             }
-            return View("ShowSearchResults",fondStylist);
+            return View("ShowSearch",fondStylist);
+            
         }
+        [HttpGet]
+        public ActionResult SearchStylistByNameAndSpecialty()
+        {
+            return View();
+
+        }
+        [HttpPost("/stylists/SearchStylistByNameAndSpecialty")]
+        public ActionResult SearchStylistByNameAndSpecialty(string givenName,string givenSpecialty)
+        {
+             List<Stylist> fondStylist = _dataBase.Stylists.Where(iterateRowsOfStylistTable => (iterateRowsOfStylistTable.StylistName==givenName) && ( iterateRowsOfStylistTable.StylistSpecialty==givenSpecialty)).ToList();
+            return View("ShowSearch",fondStylist);
+        }
+        
+
       
     }
 }
