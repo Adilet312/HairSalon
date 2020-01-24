@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+@model HairSalon.Models.Client
+<center>
+<h3>Search Clients by name</h3>
+<form action="/clients/SearchClientByName" method="post">
+  <h3><label for="givenName">PLease Enter name of the client</label></h3>
+  <h3><input id="givenId" name="givenName" type="text"></h3>
+  <h3><button type="submit" class="btn btn-info" >Find an clients</button></h3>
+</form>
+</center>

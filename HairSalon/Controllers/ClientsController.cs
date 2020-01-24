@@ -67,6 +67,18 @@ namespace HairSalon
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public ActionResult SearchClientByName()
+        {
+            return View();
+        }
+        [HttpPost("/clients/SearchClientByName")]
+        public ActionResult SearchClientByName(string givenName)
+        {
+            
+            Client foundClients = _dataBase.Clients.Where(rows => rows.ClientName==givenName).FirstOrDefault<Client>();
+            return View("ShowSearch",foundClients);
+        }
         
     }
 }

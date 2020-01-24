@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models;
+@model List<HairSalon.Models.Client>;
+
+<h2>Found Clients by name.</h2>
+<hr />
+@foreach (Client client in Model)
+{
+  <h3><li> Clients name: @client.ClientName one's stylist is @client.Stylist.StylistName</li></h3>
+}
+<h3>@Html.ActionLink("Return Home Page","Index","Home")</h3>

@@ -8,27 +8,29 @@
 ## Technologies Used
 * C#
 * .NET
-* ASP.NET Core MVC
+* ASP.NET Cor MVC
 * HTML
 * MSTest
 * MySql Database
 ## There are two tables that have "one-to-many" relationship:
-* DROP DATABASE IF EXISTS adilet_momunaliev;
-* CREATE DATABASE adilet_momunaliev;
-* USE adilet_momunaliev;
-* CREATE TABLE Stylist(
-*                      StylistId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-*                      StylistName VARCHAR(255) NOT NULL,
-*                      StylistSpecialty VARCHAR(255) NOT NULL
-* );
-* CREATE TABLE `Client`(
-*					ClientId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-*                   StylistId INT NOT NULL,
-*                    ClientName VARCHAR(255) NOT NULL,
-*                    CONSTRAINT fk_stylist_stylistId FOREIGN KEY(StylistId)
-*                    REFERENCES Stylist(StylistId) 
-*                    ON DELETE CASCADE
-* );
+```
+ DROP DATABASE IF EXISTS adilet_momunaliev;
+ CREATE DATABASE adilet_momunaliev;
+ USE adilet_momunaliev;
+ CREATE TABLE Stylist(
+                      StylistId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                      StylistName VARCHAR(255) NOT NULL,
+                      StylistSpecialty VARCHAR(255) NOT NULL
+ );
+ CREATE TABLE `Client`(
+					ClientId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                   StylistId INT NOT NULL,
+                    ClientName VARCHAR(255) NOT NULL,
+                    CONSTRAINT fk_stylist_stylistId FOREIGN KEY(StylistId)
+                    REFERENCES Stylist(StylistId) 
+                    ON DELETE CASCADE
+ );
+ ```
 
  
 
